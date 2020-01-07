@@ -9,9 +9,9 @@ import java.io.FileOutputStream;
 
 
 public class Runner {
-    public static void makePowerpoint(File[] songFolder) {
+    public static void makePowerpoint(File[] songFolder, File template) {
         try {
-            XMLSlideShow ppt = new XMLSlideShow(new FileInputStream("LGC Template.pptx"));
+            XMLSlideShow ppt = new XMLSlideShow(new FileInputStream(template));
             int count = 1;
             for (File file : songFolder) {
                 if (file != null) {
@@ -22,7 +22,7 @@ public class Runner {
 
                     // Getting the layout for the worship slide background
                     XSLFSlideMaster defaultMaster = ppt.getSlideMasters().get(0);
-                    XSLFSlideLayout layout = defaultMaster.getLayout("Worship_Slide_" + count);
+                    XSLFSlideLayout layout = defaultMaster.getLayout("Worship Slide " + count);
                     XSLFSlide slide = ppt.createSlide(layout);
 
                     // Putting title in first slide
@@ -81,7 +81,6 @@ public class Runner {
                 }
             }
 
-            System.out.println("out of loop");
             // Outputs the powerpoint
             FileOutputStream out = new FileOutputStream("Worship Songs.pptx");
             ppt.write(out);
