@@ -17,12 +17,14 @@ public class Runner {
                 if (file != null) {
                     // Loading in the text file for worship song
                     System.out.println(file.getName());
-                    System.out.println(count);
                     Song temp = new Song(file);
 
                     // Getting the layout for the worship slide background
                     XSLFSlideMaster defaultMaster = ppt.getSlideMasters().get(0);
-                    XSLFSlideLayout layout = defaultMaster.getLayout("Worship Slide " + count);
+
+                    //Change this line according to what they label the slide master for songs
+                    XSLFSlideLayout layout = defaultMaster.getLayout("Song" + count);
+
                     XSLFSlide slide = ppt.createSlide(layout);
 
                     // Putting title in first slide
