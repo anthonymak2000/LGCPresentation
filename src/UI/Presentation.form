@@ -8,17 +8,17 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="bed28" binding="panel1" layout-manager="GridLayoutManager" row-count="8" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="bed28" binding="panel1" layout-manager="GridLayoutManager" row-count="9" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
           <component id="da2eb" class="javax.swing.JLabel" binding="titleLabel">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <horizontalAlignment value="0"/>
@@ -26,23 +26,23 @@
               <text value="Sunday Service Powerpoint"/>
             </properties>
           </component>
-          <component id="32bf3" class="javax.swing.JButton" binding="worshipSongButton1">
+          <component id="32bf3" class="javax.swing.JButton" binding="wSUpload1">
             <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Upload"/>
             </properties>
           </component>
-          <component id="fb87a" class="javax.swing.JButton" binding="worshipSongButton2">
+          <component id="fb87a" class="javax.swing.JButton" binding="wSUpload2">
             <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Upload"/>
             </properties>
           </component>
-          <component id="b8447" class="javax.swing.JLabel" binding="worshipSongLabel2">
+          <component id="b8447" class="javax.swing.JLabel" binding="wSLabel2">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -50,7 +50,7 @@
               <text value="Worship Song #2"/>
             </properties>
           </component>
-          <component id="403a1" class="javax.swing.JLabel" binding="worshipSongLabel1">
+          <component id="403a1" class="javax.swing.JLabel" binding="wSLabel1">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -58,7 +58,7 @@
               <text value="Worship Song #1"/>
             </properties>
           </component>
-          <component id="90afd" class="javax.swing.JLabel" binding="worshipSongLabel3">
+          <component id="90afd" class="javax.swing.JLabel" binding="wSLabel3">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -66,7 +66,7 @@
               <text value="Worship Song #3"/>
             </properties>
           </component>
-          <component id="d284b" class="javax.swing.JLabel" binding="worshipSongLabel4">
+          <component id="d284b" class="javax.swing.JLabel" binding="wSLabel4">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -74,33 +74,25 @@
               <text value="Worship Song #4"/>
             </properties>
           </component>
-          <component id="77355" class="javax.swing.JButton" binding="worshipSongButton3">
+          <component id="77355" class="javax.swing.JButton" binding="wSUpload3">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Upload"/>
             </properties>
           </component>
-          <component id="3ad06" class="javax.swing.JButton" binding="worshipSongButton4">
+          <component id="3ad06" class="javax.swing.JButton" binding="wSUpload4">
             <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Upload"/>
             </properties>
           </component>
-          <component id="82a4f" class="javax.swing.JLabel" binding="worshipSongLabel5">
+          <component id="46686" class="javax.swing.JButton" binding="wSUpload5">
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Worship Song #5"/>
-            </properties>
-          </component>
-          <component id="46686" class="javax.swing.JButton" binding="worshipSongButton5">
-            <constraints>
-              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Upload"/>
@@ -108,7 +100,7 @@
           </component>
           <component id="c571b" class="javax.swing.JButton" binding="createButton">
             <constraints>
-              <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="8" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Make Powerpoint"/>
@@ -124,10 +116,87 @@
           </component>
           <component id="9daa0" class="javax.swing.JButton" binding="templateButton">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Upload"/>
+            </properties>
+          </component>
+          <component id="cfcd4" class="javax.swing.JButton" binding="wSAdd1">
+            <constraints>
+              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add Verse"/>
+            </properties>
+          </component>
+          <component id="c98c3" class="javax.swing.JButton" binding="wSAdd2">
+            <constraints>
+              <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add Verse"/>
+            </properties>
+          </component>
+          <component id="1a7c7" class="javax.swing.JButton" binding="wSAdd3">
+            <constraints>
+              <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add Verse"/>
+            </properties>
+          </component>
+          <component id="3dd2c" class="javax.swing.JButton" binding="wSAdd4">
+            <constraints>
+              <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add Verse"/>
+            </properties>
+          </component>
+          <component id="f65a3" class="javax.swing.JButton" binding="wSAdd5">
+            <constraints>
+              <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add Verse"/>
+            </properties>
+          </component>
+          <hspacer id="69ac0">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <component id="82a4f" class="javax.swing.JLabel" binding="wSLabel6">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Worship Song #6"/>
+            </properties>
+          </component>
+          <component id="56201" class="javax.swing.JLabel" binding="wSLabel5">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="1" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Worship Song #5"/>
+            </properties>
+          </component>
+          <component id="9b0f4" class="javax.swing.JButton" binding="wSUpload6">
+            <constraints>
+              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Upload"/>
+            </properties>
+          </component>
+          <component id="28d42" class="javax.swing.JButton" binding="wSAdd6">
+            <constraints>
+              <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Add Verse"/>
             </properties>
           </component>
         </children>

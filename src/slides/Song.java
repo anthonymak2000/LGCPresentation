@@ -26,6 +26,7 @@ public class Song {
                 if (nextLine.contains("CCLI Song")) {
                     songArtist = lineArray[i+1];
                 }
+                // TODO change the stanza change requirement
                 if(nextLine.equals("") && lineArray[i+1].equals("")) {
                     makeStanza(i+2);
                 }
@@ -37,11 +38,12 @@ public class Song {
     }
 
     private void makeStanza(int index) {
-        Stanza temp = new Stanza(lineArray[index]);
+        Stanza temp = new Stanza(lineArray[index], 10);
         while (!lineArray[index+1].equals("")) {
             temp.addLyricLine(lineArray[index+1]);
             index++;
         }
+        temp.formatLyrics();
         stanzas.add(temp);
     }
 
