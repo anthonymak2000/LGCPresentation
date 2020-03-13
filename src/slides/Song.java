@@ -13,9 +13,9 @@ public class Song {
 
     public Song(File songFile) throws Exception {
             Scanner input = new Scanner(songFile);
-            stanzas = new ArrayList<Stanza>();
+            stanzas = new ArrayList<>();
             songTitle = input.nextLine();
-            lines = new ArrayList<String>();
+            lines = new ArrayList<>();
             while (input.hasNextLine()) {
                 lines.add(input.nextLine());
             }

@@ -8,34 +8,36 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 
 
 public class Presentation {
     private JPanel rootPanel;
+    private JPanel panel1;
     private JLabel titleLabel;
+    private JButton createButton;
+    private JButton templateButton;
+    private JLabel templateLabel;
     private JButton wSUpload1;
     private JButton wSUpload2;
     private JButton wSUpload3;
     private JButton wSUpload4;
     private JButton wSUpload5;
+    private JButton wSUpload6;
     private JLabel wSLabel1;
     private JLabel wSLabel2;
     private JLabel wSLabel3;
     private JLabel wSLabel4;
+    private JLabel wSLabel5;
     private JLabel wSLabel6;
-    private JButton createButton;
-    private JButton templateButton;
-    private JLabel templateLabel;
-    private JPanel panel1;
     private JButton wSAdd1;
     private JButton wSAdd2;
     private JButton wSAdd3;
     private JButton wSAdd4;
     private JButton wSAdd5;
-    private JLabel wSLabel5;
-    private JButton wSUpload6;
     private JButton wSAdd6;
     private Song[] songs = new Song[6];
+    private ArrayList<ArrayList<JComboBox>> comboMatrix = new ArrayList<>();
     private File template;
 
     public Presentation() {
@@ -105,7 +107,10 @@ public class Presentation {
                 if (!templateButton.getText().equals("Upload")) {
                     JFileChooser fc = new JFileChooser();
                     JFrame parent = new JFrame();
+                    fc.setFileFilter(new ExtensionFileFilter("Powerpoint File (.pptx)", "pptx"));
                     fc.showSaveDialog(parent);
+                    fc.setSelectedFile(addPPTXType(fc.getSelectedFile()));
+                    System.out.println(fc.getSelectedFile().getPath());
                     Runner.makePowerpoint(songs, template, fc);
                 } else {
                     JOptionPane.showMessageDialog(new JFrame("Error"), "Please choose your template", "Please choose your template", JOptionPane.WARNING_MESSAGE);
@@ -129,7 +134,7 @@ public class Presentation {
 
     }
 
-    public void buttonPressed(JButton button, int i) throws Exception {
+    private void buttonPressed(JButton button, int i) throws Exception {
         JFileChooser fc = new JFileChooser();
         fc.setCurrentDirectory(new File("C:/Users/Anthony Mak/Desktop"));
         fc.setDialogTitle("Choose worship song " + (i+1) + ":");
@@ -139,6 +144,14 @@ public class Presentation {
             button.setText(fc.getSelectedFile().getName().substring(0, fc.getSelectedFile().getName().length()-4));
             songs[i] = new Song(fc.getSelectedFile());
         }
+    }
+
+    private File addPPTXType(File f) {
+        String filePath = f.getPath();
+        if(!filePath.toLowerCase().endsWith(".pptx")) {
+            f = new File (filePath + ".pptx");
+        }
+        return f;
     }
 
     public static void main(String[] args) {

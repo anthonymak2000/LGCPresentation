@@ -10,6 +10,7 @@ import java.io.FileOutputStream;
 
 
 public class Runner {
+
     public static void makePowerpoint(Song[] songFolder, File template, JFileChooser fc) {
         try {
             XMLSlideShow ppt = new XMLSlideShow(new FileInputStream(template));
@@ -27,36 +28,23 @@ public class Runner {
                 XSLFSlide slide = ppt.createSlide(layout);
 
                 // Putting title in first slide
-                XSLFTextShape title = slide.getPlaceholder(0);
-                title.clearText();
-                XSLFTextParagraph p = title.addNewTextParagraph();
-                XSLFTextRun r = p.addNewTextRun();
-                r.setText(temp.getTitleAndArtist());
+                setPlaceHolder(0, temp.getTitleAndArtist(), slide);
 
                 // Emptying the body of the first slide
-                title = slide.getPlaceholder(1);
-                title.clearText();
-                r = title.addNewTextParagraph().addNewTextRun();
-                r.setText(" ");
+                setPlaceHolder(1," ", slide);
 
                 // Making the slides with the lyrics
                 for (int i = 0; i < temp.getNumStanza(); i++) {
                     Stanza curr = temp.getStanza(i);
-                    boolean go = false;
+                    boolean go;
                     do {
                         slide = ppt.createSlide(layout);
 
                         // Fills lyrics
-                        title = slide.getPlaceholder(1);
-                        title.clearText();
-                        r = title.addNewTextParagraph().addNewTextRun();
-                        r.setText(curr.toString());
+                        setPlaceHolder(1, curr.toString(), slide);
 
                         // Fills artist and title
-                        title = slide.getPlaceholder(0);
-                        title.clearText();
-                        r = title.addNewTextParagraph().addNewTextRun();
-                        r.setText(temp.getTitleAndArtist());
+                        setPlaceHolder(0, temp.getTitleAndArtist(), slide);
 
                         // Puts stanza name in notes
                         XSLFNotes note = ppt.getNotesSlide(slide);
@@ -89,5 +77,12 @@ public class Runner {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static void setPlaceHolder(int placeHolder, String text, XSLFSlide slide) {
+        XSLFTextShape title = slide.getPlaceholder(placeHolder);
+        title.clearText();
+        XSLFTextRun r = title.addNewTextParagraph().addNewTextRun();
+        r.setText(text);
     }
 }
