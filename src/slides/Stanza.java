@@ -25,17 +25,18 @@ public class Stanza {
     }
 
     private void setLinesPerSlide() {
-        if (lines <= 6) {
-            linesPerSlide = lines;
-        } else if (lines % 4 == 0) {
-            linesPerSlide = 4;
-        } else if (lines % 5 == 0) {
-            linesPerSlide = 5;
-        } else if (lines % 6 == 0) {
-            linesPerSlide = 6;
-        } else {
-            linesPerSlide = lines / (lines /  4);
-        }
+//        if (lines <= 6) {
+//            linesPerSlide = lines;
+//        } else if (lines % 4 == 0) {
+//            linesPerSlide = 4;
+//        } else if (lines % 5 == 0) {
+//            linesPerSlide = 5;
+//        } else if (lines % 6 == 0) {
+//            linesPerSlide = 6;
+//        } else {
+//            linesPerSlide = lines / (lines /  4);
+//        }
+        linesPerSlide = 2;
     }
 
     public void formatLyrics() {
