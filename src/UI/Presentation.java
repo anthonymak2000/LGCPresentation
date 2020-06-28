@@ -296,6 +296,7 @@ public class Presentation {
         frame.pack();
         frame.setVisible(true);
         contentFrame = frame;
-        // TODO fix resizing
+        // TODO make it applicable for all computers (remove c:/users/Anthony)
+        // TODO input worship song prefix SEE RUNNER TODO
     }
 }

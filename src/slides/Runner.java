@@ -27,7 +27,7 @@ public class Runner {
 
                 // Getting the layout for the worship slide background
                 XSLFSlideMaster defaultMaster = ppt.getSlideMasters().get(0);
-                XSLFSlideLayout layout = defaultMaster.getLayout("Song" + count);
+                XSLFSlideLayout layout = defaultMaster.getLayout("Song" + count); // TODO may change depending on layout
                 XSLFSlide slide = ppt.createSlide(layout);
 
                 // Putting title in first slide
