@@ -9,11 +9,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Presentation {
+    private static JFrame contentFrame;
+    private int ogFrameWidth;
     private JPanel rootPanel;
     private JPanel panel1;
     private JLabel titleLabel;
@@ -55,6 +56,7 @@ public class Presentation {
     private JPanel wSPanel4;
     private JPanel wSPanel5;
     private JPanel wSPanel6;
+    private JPanel bottomSpacer;
     private final JPanel[] wSPanels = {wSPanel1, wSPanel2, wSPanel3, wSPanel4, wSPanel5, wSPanel6};
     private Song[] songs = new Song[6];
     private File template;
@@ -131,6 +133,7 @@ public class Presentation {
                 if (fc.showOpenDialog(templateButton) == JFileChooser.APPROVE_OPTION) {
                     templateButton.setText(fc.getSelectedFile().getName().substring(0, fc.getSelectedFile().getName().length() - 5));
                     template = fc.getSelectedFile();
+                    contentFrame.setSize(contentFrame.getMinimumSize().width, contentFrame.getHeight());
                 }
             }
         });
@@ -224,17 +227,18 @@ public class Presentation {
         combos[i].add(cB);
         wSRemoves[i].setEnabled(true);
         wSPanels[i].add(cB);
-        wSPanels[i].validate();
-        System.out.println("tada");
+        contentFrame.setSize(contentFrame.getMinimumSize().width, contentFrame.getHeight());
+        wSPanels[i].revalidate();
     }
 
     private void removeComboBox(int i) {
         JComboBox cB = (JComboBox) combos[i].remove(combos[i].size() - 1);
         wSPanels[i].remove(cB);
-        wSPanels[i].validate();
         if (combos[i].size() == 0) {
             wSRemoves[i].setEnabled(false);
         }
+        wSPanels[i].revalidate();
+        contentFrame.setSize(contentFrame.getMinimumSize().width, contentFrame.getHeight());
         System.out.println(combos[i].size());
     }
 
@@ -245,17 +249,20 @@ public class Presentation {
         fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fc.setFileFilter(new ExtensionFileFilter("Text Files", "txt"));
         if (fc.showOpenDialog(button) == JFileChooser.APPROVE_OPTION) {
+            int buttonWBefore = button.getMaximumSize().width;
             button.setText(fc.getSelectedFile().getName().substring(0, fc.getSelectedFile().getName().length() - 4));
+            int buttonDifference = button.getMaximumSize().width - buttonWBefore;
             songs[i] = new Song(fc.getSelectedFile());
             wSAdds[i].setEnabled(true);
             ArrayList<JComboBox> temp = combos[i];
             if (!temp.isEmpty()) {
                 for (JComboBox jc : temp) {
                     wSPanels[i].remove(jc);
-                    wSPanels[i].validate();
                 }
+                wSPanels[i].revalidate();
                 combos[i].clear();
             }
+            contentFrame.setSize(contentFrame.getMinimumSize().width, contentFrame.getHeight());
             comboArray.add(combos[i]);
         }
     }
@@ -288,5 +295,7 @@ public class Presentation {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        contentFrame = frame;
+        // TODO fix resizing
     }
 }
